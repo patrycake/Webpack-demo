@@ -5,7 +5,7 @@ function componentName() {
     const element = document.createElement('div');
 
     // use your function!
-    element.innerHTML = myName('Cody');
+    element.innerHTML = myName('Patty');
     return element;
 }
 
