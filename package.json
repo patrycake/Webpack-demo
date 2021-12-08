@@ -4,7 +4,8 @@
   "description": "Learning Webpack by following https://webpack.js.org/guides/getting-started/ tutorial",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
