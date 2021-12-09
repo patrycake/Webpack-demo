@@ -1,6 +1,18 @@
+@font-face {
+    font-family: 'Gorditas';
+    src: url('./Gorditas-Regular.ttf') format('tff')
+        /* url('./Gorditas-Regular.ttf') format('tff'); */
+}
+@font-face {
+    font-family: 'BebasNueue';
+    src: url('./BebasNeue-Regular.ttf');
+}
+
 .name {
     color: red;
-  }
+    background: url('./ufo.png');
+    font-family: 'Gorditas', 'BebasNueue', cursive;
+}
 
 .lodash {
     color: blue;
