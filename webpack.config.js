@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -10,11 +12,14 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         static: "./dist",
+        open: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Development',
+            template: './src/index.html'
         }),
+        new MiniCssExtractPlugin(),
     ],
     output: {
         filename: '[name].bundle.js',
@@ -24,7 +29,7 @@ module.exports = {
     module: {
         rules: [{
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
 
             },
             {
@@ -37,5 +42,11 @@ module.exports = {
             },
         ],
     },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin()
+        ]
+    }
 };
 /*A chain is executed in reverse order*/
